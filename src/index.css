@@ -1,13 +1,99 @@
+/* src/index.css */
+@import "@fontsource/roboto";
+
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  height: 100%; /* Ensure the background covers the whole page */
+  font-family: Arial, sans-serif;
+  color: white; /* White text for contrast */
+  display: flex;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center;
+  text-align: center; /* Center text */
+  flex-direction: column; /* Stack content vertically */
+  background: linear-gradient(
+    to bottom,
+    #60a9d6 33%,
+    /* Muted Sky Blue */ #d8b500 33%,
+    /* Muted Yellow */ #d8b500 66%,
+    /* Muted Yellow */ #009639 66% /* Muted Green */
+  );
+  background-size: 100% 100%; /* Cover the entire page */
+  background-attachment: fixed; /* Keep the background fixed when scrolling */
+  background-repeat: no-repeat; /* Prevent repeating the background */
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Apply text shadow globally */
+* {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Light shadow for text */
+  font-family: Roboto;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack the content vertically */
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in total height/width calculation */
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  padding: 0 15%; /* Adjust padding to ensure content doesn't overflow */
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  background-color: #34495e; /* Slightly lighter grey/blue */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px; /* Space below the container */
+}
+
+/* Add scrollable content area */
+.scrollable-content {
+  width: 100%;
+  max-width: 500px;
+  max-height: 300px; /* Set a max height for the scrollable area */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+  background-color: #34495e; /* Same background as the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+/* Styling for select and buttons */
+select,
+button {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  background-color: #1abc9c; /* A nice accent color for the button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #16a085; /* Darker shade for hover effect */
 }
