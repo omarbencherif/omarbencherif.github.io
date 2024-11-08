@@ -2,19 +2,19 @@ const items = [
   {
     name: "A Diamond-Encrusted Smartphone",
     price: 500000,
-    image: "resources/diamondencrustedphone.jpeg",
+    image: "resources/diamondencrustedphone.webp",
   },
   {
     name: "Neymar Jr Transfer Fee",
     price: 200000000,
-    image: "resources/neymar.jpg",
+    image: "resources/neymar.webp",
   },
   {
     name: "Ferrari LaFerrari",
     price: 1200000,
     image: "resources/laferrari.webp",
   },
-  { name: "Private Jet", price: 70000000, image: "resources/privatejet.jpg" },
+  { name: "Private Jet", price: 70000000, image: "resources/privatejet.webp" },
   {
     name: "A Dinner at Nusr-Et (for 10 People)",
     price: 5000,
@@ -23,7 +23,7 @@ const items = [
   {
     name: "Buying a UK Visa for an Immigrant (Annual Cost)",
     price: 1500,
-    image: "resources/ukvisa.jpg",
+    image: "resources/ukvisa.webp",
   },
   {
     name: "A First-Class Plane Ticket to Rwanda",
@@ -38,12 +38,12 @@ const items = [
   {
     name: "Renting a Mansion for a Month in Central London",
     price: 250000,
-    image: "resources/centrallondonmansion.jpg",
+    image: "resources/centrallondonmansion.webp",
   },
   {
     name: "A Luxury Yacht for a Week",
     price: 500000,
-    image: "resources/Yacht.jpg",
+    image: "resources/Yacht.webp",
   },
   {
     name: "A Rare 1960s Ferrari 250 GTO",
@@ -53,17 +53,17 @@ const items = [
   {
     name: "A Week Stay in a 5-Star Resort in Dubai",
     price: 20000,
-    image: "resources/burjalarab.jpg",
+    image: "resources/burjalarab.webp",
   },
   {
     name: "Annual Fees for a Private School in the UK",
     price: 45000,
-    image: "resources/privateschooluk.jpg",
+    image: "resources/privateschooluk.webp",
   },
   {
     name: "The Cost of Sponsoring an Athlete for the Olympics",
     price: 100000,
-    image: "resources/runners.avif",
+    image: "resources/runners.webp",
   },
   {
     name: "Buying the World’s Most Expensive Painting (e.g., Salvator Mundi)",
@@ -73,7 +73,7 @@ const items = [
   {
     name: "GDP of Tuvalu",
     price: 50_000_000,
-    image: "resources/tuvalu.svg",
+    image: "resources/tuvalu.webp",
   },
   {
     name: "GDP of Nauru",
@@ -83,32 +83,32 @@ const items = [
   {
     name: "GDP of Kiribati",
     price: 200_000_000,
-    image: "resources/kiribati.png",
+    image: "resources/kiribati.webp",
   },
   {
     name: "GDP of Marshall Islands",
     price: 250_000_000,
-    image: "resources/marshallislands.png",
+    image: "resources/marshallislands.webp",
   },
   {
     name: "GDP of Micronesia",
     price: 350_000_000,
-    image: "resources/micronesia.png",
+    image: "resources/micronesia.webp",
   },
   {
     name: "GDP of São Tomé and Príncipe",
     price: 500_000_000,
-    image: "resources/saotome.svg",
+    image: "resources/saotome.webp",
   },
   {
     name: "GDP of Dominica",
     price: 600_000_000,
-    image: "resources/dominica.svg",
+    image: "resources/dominica.webp",
   },
   {
     name: "GDP of Saint Vincent and the Grenadines",
     price: 800_000_000,
-    image: "resources/saintvincent.png",
+    image: "resources/saintvincent.webp",
   },
   {
     name: "GDP of Samoa",
@@ -118,7 +118,7 @@ const items = [
   {
     name: "GDP of Vanuatu",
     price: 1_200_000_000,
-    image: "resources/vanuatu.svg",
+    image: "resources/vanuatu.webp",
   },
   {
     name: "GDP of Saint Kitts and Nevis",
@@ -128,7 +128,7 @@ const items = [
   {
     name: "GDP of Comoros",
     price: 1_400_000_000,
-    image: "resources/comoros.svg",
+    image: "resources/comoros.webp",
   },
   {
     name: "Cost of All Immigrants' NHS Care",
@@ -138,12 +138,12 @@ const items = [
   {
     name: "A Year's Living Cost in London",
     price: 300_000,
-    image: "resources/london.jpeg",
+    image: "resources/london.webp",
   },
   {
     name: "Jeff Bezos' Beverley Hills Home",
     price: 175_000_000,
-    image: "resources/bezos.jpg",
+    image: "resources/bezos.webp",
   },
   {
     name: "Michael Jackson's Estate",
@@ -153,12 +153,12 @@ const items = [
   {
     name: "Angela Rayner's DJ Booth Appearance",
     price: 836,
-    image: "resources/angela.avif",
+    image: "resources/angela.webp",
   },
   {
     name: "Keir Starmer's Corporate Arsenal tickets",
     price: 35000,
-    image: "resources/keirstarmer.jpg",
+    image: "resources/keirstarmer.webp",
   },
   {
     name: "Deporting 1 person to the International Space Station",
@@ -168,22 +168,22 @@ const items = [
   {
     name: "Average Person's Lifetime Expenditure",
     price: 1200000,
-    image: "resources/lifeexpenditure.jpg", // Add a relevant image here
+    image: "resources/lifeexpenditure.webp", // Add a relevant image here
   },
   {
     name: "Deporting Every Illegal Immigrant in the UK",
     price: 10000000000, // Estimated cost, considering logistics, legal processes, and transport
-    image: "resources/deport.jpg", // Add a relevant image here
+    image: "resources/deport.webp", // Add a relevant image here
   },
   {
     name: "The Development of  the Lockheed Martin F-35 Jet",
     price: 1300000000000, // $1.3 trillion
-    image: "resources/f35.jpg", // Add a relevant image here
+    image: "resources/f35.webp", // Add a relevant image here
   },
   {
     name: "The Daily Telegraph",
     price: 600000000, // Estimated cost, considering logistics, legal processes, and transport
-    image: "resources/telegraph.jpg", // Add a relevant image here
+    image: "resources/telegraph.webp", // Add a relevant image here
   },
   {
     name: "A Cullnian Diamond",
@@ -193,7 +193,7 @@ const items = [
   {
     name: "Cost of Building 1,000 Houses in the UK",
     price: 100000000,
-    image: "resources/houseconstruction.jpg",
+    image: "resources/houseconstruction.webp",
   },
 ];
 

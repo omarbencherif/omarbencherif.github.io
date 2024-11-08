@@ -3,6 +3,9 @@
 
 html,
 body {
+  background-color: #283a45;
+}
+body {
   margin: 0;
   padding: 0;
   height: 100%; /* Ensure the background covers the whole page */
@@ -14,7 +17,6 @@ body {
   text-align: center; /* Center text */
   flex-direction: column; /* Stack content vertically */
   background: linear-gradient(
-    to bottom,
     #60a9d6 33%,
     /* Muted Sky Blue */ #d8b500 33%,
     /* Muted Yellow */ #d8b500 66%,
