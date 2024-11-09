@@ -46,6 +46,16 @@
   }
 }
 
+.remove-all-button.disabled {
+  background-color: #666666; /* Grayed-out background */
+  color: #b0b0b0; /* Grayed-out text */
+  cursor: default; /* Change cursor to indicate it's not clickable */
+}
+
+.remove-all-button:disabled {
+  opacity: 0.6; /* Optional: reduce opacity when disabled */
+}
+
 .item-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));

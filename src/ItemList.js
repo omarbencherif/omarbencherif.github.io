@@ -14,16 +14,18 @@ function ItemList({
 
   return (
     <div className="item-list-container">
-      {shoppingList.length > 0 && (
-        <button
-          onClick={removeAllFromShoppingList}
-          className="remove-all-button"
-        >
-          Remove All
-        </button>
-      )}
+      {/* Remove All button is always rendered but is disabled when no items in shopping list */}
+      <button
+        onClick={removeAllFromShoppingList}
+        className={`remove-all-button ${
+          shoppingList.length === 0 ? "disabled" : ""
+        }`}
+        disabled={shoppingList.length === 0}
+      >
+        Remove All
+      </button>
 
-      <div className="item-grid">
+      <div className="item-grid" style={{ flexDirection: "column-reverse" }}>
         {items.map((item, index) => {
           const count = getItemCount(item);
           return (
@@ -45,16 +47,16 @@ function ItemList({
               <div className="button-container">
                 <button
                   onClick={() => addToShoppingList(item)}
-                  className={`add-button ${count > 0 ? "added" : ""}`}
+                  className={`add-button ${count > 0 ? "added " : ""}`}
                 >
-                  {count > 0 ? "Added" : "Add to List"}
+                  {count > 0 ? "Add + 1" : "Add to List"}
                 </button>
                 {count > 0 && (
                   <button
                     onClick={() => removeFromShoppingList(item)}
                     className="remove-button"
                   >
-                    Remove
+                    Remove - 1
                   </button>
                 )}
               </div>

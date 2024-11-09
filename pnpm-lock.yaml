@@ -23,6 +23,9 @@ dependencies:
   react:
     specifier: ^18.3.1
     version: 18.3.1
+  react-adsense:
+    specifier: ^0.1.0
+    version: 0.1.0(prop-types@15.8.1)(react@18.3.1)
   react-dom:
     specifier: ^18.3.1
     version: 18.3.1(react@18.3.1)
@@ -8833,6 +8836,16 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+    dev: false
+
+  /react-adsense@0.1.0(prop-types@15.8.1)(react@18.3.1):
+    resolution: {integrity: sha512-VzGMH9qA7bBKAveK1joFWphhB7e2Y1ToSGzUa8b7eit3+VSkg/2MSvKxe5d/r4mcmkOHu6CHNJW0nn6RQC3IZA==}
+    peerDependencies:
+      prop-types: '>=15.0.0'
+      react: '>=0.13.2 || ^0.14 || ^15.0.0 || ^16.0.0'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.3.1
     dev: false
 
   /react-app-polyfill@3.0.0:

@@ -18,13 +18,21 @@ function App() {
     setShoppingList([...shoppingList, item]);
     setTotal(total + item.price);
   };
-
-  // Remove items from shopping list
   const removeFromShoppingList = (item) => {
-    setShoppingList(shoppingList.filter((i) => i.name !== item.name));
-    setTotal(total - item.price);
-  };
+    // Find the first occurrence of the item and remove it
+    const index = shoppingList.findIndex((i) => i.name === item.name);
 
+    if (index !== -1) {
+      // Check if the item exists in the list
+      // Remove the item at the found index
+      const updatedShoppingList = [...shoppingList];
+      updatedShoppingList.splice(index, 1);
+
+      // Update the shopping list and total
+      setShoppingList(updatedShoppingList);
+      setTotal(total - item.price);
+    }
+  };
   // Clear all items
   const removeAllFromShoppingList = () => {
     setShoppingList([]);
@@ -34,12 +42,14 @@ function App() {
   // Generate the comparison result message for the sticky header
   const generateResultMessage = () => {
     if (total < costPerImmigrant) {
-      return `Your shopping list (<span style="color: #76ff03;">£${total.toLocaleString()}</span>) is cheaper than sending one immigrant to Rwanda (<span style="color: #ff9800;">£${costPerImmigrant.toLocaleString()}</span>).`;
+      return `Your shopping list (<span style="color: #76ff03;">£${total.toLocaleString()}</span>) is cheaper than sending one migrant to Rwanda (<span style="color: #ff9800;">£${costPerImmigrant.toLocaleString()}</span>).`;
     } else {
       const immigrantsNeeded = Math.floor(total / costPerImmigrant);
       const totalCostForImmigrants = immigrantsNeeded * costPerImmigrant;
 
-      return `Your shopping list (<span style="color: #76ff03;">£${total.toLocaleString()}</span>) is equivalent to deporting ${immigrantsNeeded} immigrant(s) to Rwanda at a total cost of <span style="color: #ff9800;">£${totalCostForImmigrants.toLocaleString()}</span>`;
+      return `Your shopping list (<span style="color: #76ff03;">£${total.toLocaleString()}</span>) is cheaper than  sending ${
+        immigrantsNeeded + 1
+      } migrants to Rwanda at a total cost of <span style="color: #ff9800;">£${totalCostForImmigrants.toLocaleString()}</span>`;
     }
   };
 
@@ -49,7 +59,14 @@ function App() {
       return `Add some items to see if you are capable of spending worse than the government!`;
     }
 
-    const immigrants = Math.floor(total / costPerImmigrant);
+    // Calculate the maximum number of immigrants that can be deported
+    const immigrants = Math.ceil(total / costPerImmigrant);
+
+    // Calculate how much money is left after deporting the maximum number of immigrants
+    const totalSpentOnImmigrants = immigrants * costPerImmigrant;
+    const spareAmount = totalSpentOnImmigrants - total;
+
+    // Summarize the shopping list
     const itemSummary = shoppingList.reduce((acc, item) => {
       acc[item.name] = (acc[item.name] || 0) + 1;
       return acc;
@@ -62,27 +79,25 @@ function App() {
       )
       .join(", ");
 
-    const spareAmount = total % costPerImmigrant;
-
-    if (immigrants < 1) {
-      return `You could deport an immigrant to Rwanda, or you could pay for: <span style="font-weight: bold;">${coloredItemSummary}</span>${
-        spareAmount > 0
-          ? ` with £${spareAmount.toLocaleString()} to spare!`
-          : ""
-      }`;
-    } else if (immigrants > 1) {
-      return `You could deport ${immigrants} immigrants to Rwanda, or you could pay for: <span style="font-weight: bold;">${coloredItemSummary}</span>${
-        spareAmount > 0
-          ? ` with £${spareAmount.toLocaleString()} to spare!`
-          : ""
-      }`;
-    } else {
-      return `You could pay for part of the cost of sending an immigrant to Rwanda with your shopping list: <span style="font-weight: bold;">${coloredItemSummary}</span>${
-        spareAmount > 0
-          ? ` with £${spareAmount.toLocaleString()} to spare!`
-          : ""
-      }`;
-    }
+    // Generate the final message
+    return `
+      ${
+        immigrants > 1
+          ? `You could deport <h3 style="margin: 9px;"> ${immigrants}  illegal migrants </h3>to Rwanda, or you could pay for: <span style="font-weight: bold;">${coloredItemSummary}</span>` +
+            (spareAmount > 0
+              ? ` and have £${spareAmount.toLocaleString()} left over!`
+              : "")
+          : immigrants === 1
+          ? `You could deport 1 illegal migrant to Rwanda, or you could pay for: <span style="font-weight: bold;">${coloredItemSummary}</span>` +
+            (spareAmount > 0
+              ? ` and have £${spareAmount.toLocaleString()} left over!`
+              : "")
+          : `You could deport an illegal migrant to Rwanda, or you could pay for: <span style="font-weight: bold;">${coloredItemSummary}</span>` +
+            (spareAmount > 0
+              ? ` and have £${spareAmount.toLocaleString()} left over!`
+              : "")
+      }
+    `;
   };
 
   // Update messages whenever total changes
@@ -98,10 +113,19 @@ function App() {
           Is it cheaper than deporting someone to Rwanda?
         </h1>
         <p className="description">
-          In 2023, the UK’s scrapped Rwanda plan, which ultimately deported 4
-          immigrants, cost British taxpayers 700 million pounds. This failed
-          plan serves as a stark example of how large sums can be spent on
-          controversial policies.
+          In 2023, the UK government announced the controversial Rwanda plan,
+          which ultimately led to the deportation of just 4 migrants at a cost
+          of 700 million pounds to British taxpayers. The plan was scrapped soon
+          after.
+        </p>
+        <p className="description">
+          This failed initiative serves as a stark example of how large sums can
+          be spent on controversial policies.
+        </p>
+        <p className="description">
+          This site allows you to explore all the other things that could have
+          been funded with that money, offering comparisons of various costs and
+          expenses.
         </p>
       </div>
 
@@ -135,7 +159,7 @@ function App() {
             margin: "0",
             padding: "5px",
             fontSize: "0.9em",
-            color: "lightgray",
+            color: "white",
           }}
           dangerouslySetInnerHTML={{ __html: deportMessage }}
         />
