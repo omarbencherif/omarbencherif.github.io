@@ -32,7 +32,7 @@ const items = [
     image: "resources/houseconstruction.webp",
   },
   {
-    name: "A UK Visa for an Immigrant (Annual Cost)",
+    name: "A UK Visa for a Migrant (Annual Cost)",
     price: 1500,
     image: "resources/ukvisa.webp",
   },
@@ -60,6 +60,21 @@ const items = [
     name: "A Luxury Yacht for a Week",
     price: 500000,
     image: "resources/Yacht.webp",
+  },
+  {
+    name: "Build a School",
+    price: 50000000, // £50 million
+    image: "resources/school.jpg", // Add a relevant image for the school
+  },
+  {
+    name: "Build a State-of-the-Art Hospital",
+    price: 100000000, // £100 million
+    image: "resources/hospital.jpg", // Add a relevant image for the school
+  },
+  {
+    name: "Build a Homeless Shelter",
+    price: 20000000, // £20 million
+    image: "resources/shelter.jpg", // Add a relevant image for the school
   },
   {
     name: "A Rare 1960s Ferrari 250 GTO",
@@ -119,7 +134,7 @@ const items = [
   },
 
   {
-    name: "Deporting Every Illegal Immigrant in the UK",
+    name: "Deporting Every Illegal Migrant in the UK",
     price: 10000000000,
     image: "resources/deport.webp",
   },
